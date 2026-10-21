@@ -18,6 +18,9 @@ namespace Assets.Shared
 
         // Payload: ChiliServing
         public const string ChiliServed = "ChiliServed";
+
+        // Payload: PimentRequested
+        public const string PimentRequested = "PimentRequested";
     }
 
     public class PimentDrop
@@ -64,5 +67,10 @@ namespace Assets.Shared
             Shu = shu;
             Taste = taste;
         }
+    }
+
+    public class PimentRequested
+    {
+
     }
 }

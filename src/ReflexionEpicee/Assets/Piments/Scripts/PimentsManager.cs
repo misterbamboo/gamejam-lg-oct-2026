@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
-
 public class PimentsManager : MonoBehaviour
 {
     [SerializeField]
     GameObject pimentPrefab;
+
+    [SerializeField]
+    Vector3 pos;
 
     List<PimentData> piments = new();
 
@@ -16,24 +18,21 @@ public class PimentsManager : MonoBehaviour
     void Start()
     {
         piments = GetPiments();
-        Debug.Log(piments[0]);
-        CreatePiment(0, new Vector3(0, 0, 0));
     }
 
-    public GameObject CreatePiment(int indice, Vector3 pos)
+    public void CreatePiment(PimentRequested pimentRequested)
     {
+        int indicePiment = UnityEngine.Random.Range(0, piments.Count);
         GameObject newPiment = Instantiate(pimentPrefab, pos, Quaternion.identity);
 
         // Link Piment class
-        newPiment.GetComponent<Piment>().CopyVals(piments[indice]);
+        newPiment.GetComponent<Piment>().CopyVals(piments[indicePiment]);
 
         // Load material
-        newPiment.GetComponent<Renderer>().material = Resources.Load(piments[indice].MatDir, typeof(Material)) as Material;
-
-        return newPiment;
+        newPiment.GetComponent<Renderer>().material = Resources.Load(piments[indicePiment].MatDir, typeof(Material)) as Material;
     }
 
-    private List<PimentData> GetPiments()
+    private static List<PimentData> GetPiments()
     {
         using (StreamReader r = new StreamReader("Assets/Piments/JSON/Piment.json"))
         {
@@ -44,6 +43,6 @@ public class PimentsManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        //EventBus.Subscribe<ChiliServing>(GameEvents.PimentRequested, CreatePiment);
+        EventBus.Subscribe<PimentRequested>(GameEvents.PimentRequested, CreatePiment);
     }
 }

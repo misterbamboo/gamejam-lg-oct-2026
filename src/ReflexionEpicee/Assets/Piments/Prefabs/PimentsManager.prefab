@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: PeppersPlease::PimentsManager
   pimentPrefab: {fileID: 8722293477364450624, guid: 0439ede091dfbab42b5bd8d6907ca364, type: 3}
+  pos: {x: 0, y: 5.5, z: 0}
