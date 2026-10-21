@@ -2,7 +2,7 @@
 public interface IPiment
 {
     /// <summary>Spice level, 0 to 10.</summary>
-    int Shu { get; }
+    float Shu { get; }
 
     /// <summary>0 &lt; Volume &lt;= 1</summary>
     float Volume { get; }
