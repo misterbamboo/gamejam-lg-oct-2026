@@ -53,6 +53,7 @@
     <Compile Include="Assets\CustomerQueueDomain\Scripts\CustomerQueue.cs" />
     <Compile Include="Assets\Piments\Scripts\Piment.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\CustomerReflexions.cs" />
+    <Compile Include="Assets\Piments\Scripts\PimentsManager.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\CustomerNames.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\PreferenceRange.cs" />
     <Compile Include="Assets\CustomerQueueDomain\UI\CustomerPopupUI.cs" />
@@ -78,6 +79,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Shared\User Enjoyment Formula.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
