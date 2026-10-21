@@ -1,0 +1,27 @@
+Enjoyment = taste + color
+
+
+0 < Volume <= 1
+0 < dryness <= 1
+
+Bouncy and slimy and rough and soft and spiky > 0 
+
+Reflection and refraction are element of [0,1]
+
+Color =  tint * reflection + refraction * tint * (1 - reflection)
+
+Reflection + Refraction = 1
+
+Taste = 10 - abs(Heat - Request)
+
+Tint is element of [0,1]
+
+Surface = abs(rough - soft) + spiky
+
+Dilution = volume/(volume + dryness)
+Texture =  sqrt((bouncy * slimy * Surface)^(abs(reflection - refraction)))
+Heat = 10 * abs(sin(Dilution) * cos(Texture) - tint)/(1 + sin(1))
+
+Heat = 10 * abs((sin(volume/(volume + dryness)) * cos(sqrt((bouncy * slimy * abs(Surface))^(abs(reflection - refraction)))) - tint))/(1 + sin(1))
+
+Request is element of [0,10]
