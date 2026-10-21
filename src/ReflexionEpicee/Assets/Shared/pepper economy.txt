@@ -1,0 +1,27 @@
+boo
+
+variables: 
+
+variation = 100 - prix
+
+prix is element of [1, 99]
+
+chance = variation / 2
+
+each country have different chance bonus of having rarer peppers
+
+start with ~5-50 dollars (?)
+
+each round will scale money and customer amount
+
+you can sell peppers for low percentage of their price (30-50% (?))
+
+
+basic pepper: 1$, [0,1]
+medium low pepper: 5$ [0;0.9]
+medium high pepper: 5$ [0.1;1]
+medium middle pepper: 10$ [0.1;0.9]
+advanced low pepper: 25$ [0.3; 1]
+advanced high pepper: 25$ [0;0,7]
+advanced middle pepper: 50$ [0.3; 0.7]
+ultimate pepper: 99$ [0;1] generated but calculated heat is given without tests
