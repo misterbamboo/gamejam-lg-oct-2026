@@ -4,7 +4,7 @@ public class ThreeDView : MonoBehaviour
     public void Update()
     {
         
-        while(Input.GetMouseButton(1))
+        while(!Input.GetMouseButton(1))
         {
             if (Input.GetKey(KeyCode.D))
                 transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime, Space.Self);
