@@ -1,3 +1,4 @@
+using Assets.Shared;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,14 +10,14 @@ public class PimentsManager : MonoBehaviour
     [SerializeField]
     GameObject pimentPrefab;
 
-    List<Piment> piments = new();
+    List<PimentData> piments = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         piments = GetPiments();
         Debug.Log(piments[0]);
-        CreatePiment(0, new Vector3(0,0,0));
+        CreatePiment(0, new Vector3(0, 0, 0));
     }
 
     public GameObject CreatePiment(int indice, Vector3 pos)
@@ -32,13 +33,17 @@ public class PimentsManager : MonoBehaviour
         return newPiment;
     }
 
-    private List<Piment> GetPiments()
+    private List<PimentData> GetPiments()
     {
         using (StreamReader r = new StreamReader("Assets/Piments/JSON/Piment.json"))
         {
             string json = r.ReadToEnd();
-            List<Piment> piments = JsonConvert.DeserializeObject<List<Piment>>(json);
+            List<PimentData> piments = JsonConvert.DeserializeObject<List<PimentData>>(json);
             return piments;
         }
+    }
+    private void OnEnable()
+    {
+        //EventBus.Subscribe<ChiliServing>(GameEvents.PimentRequested, CreatePiment);
     }
 }

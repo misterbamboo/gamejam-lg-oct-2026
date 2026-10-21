@@ -7,14 +7,8 @@ namespace Assets.CookingPotDomain.Scripts
     // A scoop of chili: dragged out of the pot onto a customer, or dropped on the table.
     public class Ladle : MonoBehaviour
     {
-        [SerializeField]
-        private float gravity = 20f;
-
-        // The table surface the ladle falls onto when released over nobody.
-        [SerializeField]
-        private float tableY = 0f;
-
         private CookingPot cookingPot;
+        private Renderer ladleRenderer;
         private Camera mainCamera;
         private bool isDragging;
         private float dragDepth;
@@ -30,6 +24,7 @@ namespace Assets.CookingPotDomain.Scripts
         {
             cookingPot = pot;
             mainCamera = camera;
+            ladleRenderer = GetComponent<Renderer>();
             Shu = shu;
             StartDragging();
         }
@@ -65,7 +60,7 @@ namespace Assets.CookingPotDomain.Scripts
 
             if (!isDragging)
             {
-                Fall();
+                TableFall.Step(transform, ladleRenderer, ref fallSpeed);
 
                 if (mouse.leftButton.wasPressedThisFrame && IsUnder(screenPosition))
                 {
@@ -104,24 +99,6 @@ namespace Assets.CookingPotDomain.Scripts
         {
             isDragging = true;
             dragDepth = mainCamera.WorldToScreenPoint(transform.position).z;
-        }
-
-        private void Fall()
-        {
-            // Rest with the bottom of the sphere touching the table.
-            var restY = tableY + transform.lossyScale.y * 0.5f;
-            var position = transform.position;
-            if (position.y <= restY)
-            {
-                // Also lifts it back up if it was dropped below the table.
-                position.y = restY;
-                transform.position = position;
-                return;
-            }
-
-            fallSpeed += gravity * Time.deltaTime;
-            position.y = Mathf.Max(restY, position.y - fallSpeed * Time.deltaTime);
-            transform.position = position;
         }
 
         private bool IsUnder(Vector2 screenPosition)

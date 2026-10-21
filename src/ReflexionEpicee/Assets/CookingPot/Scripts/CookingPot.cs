@@ -51,11 +51,22 @@ namespace Assets.CookingPotDomain.Scripts
         private void OnEnable()
         {
             EventBus.Subscribe<ChiliServing>(GameEvents.ChiliServed, OnChiliServed);
+            EventBus.Subscribe<PimentDrop>(GameEvents.PimentDropped, OnPimentDropped);
         }
 
         private void OnDisable()
         {
             EventBus.Unsubscribe<ChiliServing>(GameEvents.ChiliServed, OnChiliServed);
+            EventBus.Unsubscribe<PimentDrop>(GameEvents.PimentDropped, OnPimentDropped);
+        }
+
+        // A pepper dropped over the pot goes in, unless the pot is full.
+        private void OnPimentDropped(PimentDrop drop)
+        {
+            if (IsUnder(drop.ScreenPosition) && AddPiment(drop.Piment))
+            {
+                drop.Take();
+            }
         }
 
         private void Update()

@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60297c7cc343f342b929d4ed347a36d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PeppersPlease::PimentsManager
-  pepperPrefab: {fileID: 2119107481057440640, guid: 013275403ce8bff49a417b78440da412, type: 3}
+  pimentPrefab: {fileID: 8722293477364450624, guid: 0439ede091dfbab42b5bd8d6907ca364, type: 3}

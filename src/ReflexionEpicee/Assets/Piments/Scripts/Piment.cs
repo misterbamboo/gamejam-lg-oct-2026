@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Piment : MonoBehaviour
+public class Piment : MonoBehaviour, IPiment
 {
     // Niveau d'épice 0 à 10
     [SerializeField]
@@ -49,6 +49,45 @@ public class Piment : MonoBehaviour
         private set { matDir = value; }
     }
 
+    // Properties for the enjoyment formula (Shared/User Enjoyment Formula.txt).
+    [SerializeField, Range(0.01f, 1f)]
+    float volume = 0.5f;
+
+    [SerializeField, Range(0.01f, 1f)]
+    float dryness = 0.5f;
+
+    [SerializeField, Min(0.01f)]
+    float bouncy = 0.5f;
+
+    [SerializeField, Min(0.01f)]
+    float slimy = 0.5f;
+
+    [SerializeField, Min(0.01f)]
+    float rough = 0.5f;
+
+    [SerializeField, Min(0.01f)]
+    float soft = 0.5f;
+
+    [SerializeField, Min(0.01f)]
+    float spiky = 0.5f;
+
+    [SerializeField, Range(0f, 1f)]
+    float reflection = 0.5f;
+
+    [SerializeField, Range(0f, 1f)]
+    float tint = 0.5f;
+
+    public float Volume => volume;
+    public float Dryness => dryness;
+    public float Bouncy => bouncy;
+    public float Slimy => slimy;
+    public float Rough => rough;
+    public float Soft => soft;
+    public float Spiky => spiky;
+    public float Reflection => reflection;
+    public float Refraction => 1f - reflection;
+    public float Tint => tint;
+
     public Piment(int shu, string nom, string pays, string matDir)
     {
         Shu = shu;
@@ -57,14 +96,23 @@ public class Piment : MonoBehaviour
         MatDir = matDir;
     }
 
-    public void CopyVals(Piment p)
+    public void CopyVals(PimentData p)
     {
         Shu = p.Shu;
         Nom = p.Nom;
         Pays = p.Pays;
         MatDir = p.MatDir;
+        volume = p.Volume;
+        dryness = p.Dryness;
+        bouncy = p.Bouncy;
+        slimy = p.Slimy;
+        rough = p.Rough;
+        soft = p.Soft;
+        spiky = p.Spiky;
+        reflection = p.Reflection;
+        tint = p.Tint;
     }
-    
+
     public override string ToString()
     {
         return nom + " epice: " + shu + " mat: " + MatDir;

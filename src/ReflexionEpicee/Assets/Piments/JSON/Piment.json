@@ -3,19 +3,45 @@
     "shu": 0,
     "nom": "Piment Jaune Brésil",
     "pays": "Brésil",
-    "MatDir": "Materials/Jaune"
-
+    "MatDir": "Materials/Jaune",
+    "volume": 0.8,
+    "dryness": 0.3,
+    "bouncy": 0.7,
+    "slimy": 0.2,
+    "rough": 0.2,
+    "soft": 0.8,
+    "spiky": 0.1,
+    "reflection": 0.7,
+    "tint": 0.2
   },
   {
     "shu": 7,
     "nom": "Piment Rouge Brésil",
     "pays": "Brésil",
-    "MatDir": "Materials/Rouge"
+    "MatDir": "Materials/Rouge",
+    "volume": 0.4,
+    "dryness": 0.7,
+    "bouncy": 0.3,
+    "slimy": 0.4,
+    "rough": 0.8,
+    "soft": 0.2,
+    "spiky": 0.9,
+    "reflection": 0.3,
+    "tint": 0.9
   },
   {
     "shu": 4,
     "nom": "Piment Vert Brésil",
     "pays": "Brésil",
-    "MatDir": "Materials/Vert"
+    "MatDir": "Materials/Vert",
+    "volume": 0.6,
+    "dryness": 0.5,
+    "bouncy": 0.5,
+    "slimy": 0.6,
+    "rough": 0.5,
+    "soft": 0.5,
+    "spiky": 0.4,
+    "reflection": 0.5,
+    "tint": 0.5
   }
 ]
