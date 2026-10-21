@@ -44,6 +44,6 @@ public class PimentsManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        EventBus.Subscribe<ChiliServing>(GameEvents.PimentRequested, CreatePiment);
+        //EventBus.Subscribe<ChiliServing>(GameEvents.PimentRequested, CreatePiment);
     }
 }
