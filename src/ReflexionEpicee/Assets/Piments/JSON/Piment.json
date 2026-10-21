@@ -1,15 +1,21 @@
 [
   {
     "shu": 0,
-    "nom": "Piment1",
-    "pays": "Brazil"
-  },
-  {
-    "shu": 1,
-    "nom": "Piment2"
+    "nom": "Piment Jaune Brésil",
+    "pays": "Brésil",
+    "MatDir": "Materials/Jaune"
+
   },
   {
     "shu": 7,
-    "nom": "Piment3"
+    "nom": "Piment Rouge Brésil",
+    "pays": "Brésil",
+    "MatDir": "Materials/Rouge"
+  },
+  {
+    "shu": 4,
+    "nom": "Piment Vert Brésil",
+    "pays": "Brésil",
+    "MatDir": "Materials/Vert"
   }
 ]
