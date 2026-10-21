@@ -3,14 +3,12 @@ using System;
 // The spice level instructions (Piments/Instructions), translated from main.py step by step.
 public static class SpiceRecipe
 {
-    // Returns null when the instructions have no answer (step 3: "pleurez").
-    public static float? Evaluate(PimentColor color, string pays)
+    public static float Evaluate(PimentColor color, string pays)
     {
-        var shu = Step1(0f, color, pays);
-        return shu.HasValue ? FinalLevel(shu.Value) : (float?)null;
+        return FinalLevel(Step1(0f, color, pays));
     }
 
-    private static float? Step1(float shu, PimentColor color, string pays)
+    private static float Step1(float shu, PimentColor color, string pays)
     {
         if (color == PimentColor.Rouge)
         {
@@ -25,7 +23,7 @@ public static class SpiceRecipe
         return Step4(shu + 6.1f, color, pays);
     }
 
-    private static float? Step2(float shu, PimentColor color, string pays)
+    private static float Step2(float shu, PimentColor color, string pays)
     {
         if (pays.StartsWith("I"))
         {
@@ -35,7 +33,7 @@ public static class SpiceRecipe
         return Step8(shu - 7.9f, color, pays);
     }
 
-    private static float? Step3(float shu, PimentColor color, string pays)
+    private static float Step3(float shu, PimentColor color, string pays)
     {
         if (pays == Pays.Inde || pays == Pays.Canada)
         {
@@ -57,16 +55,16 @@ public static class SpiceRecipe
             return Step5(shu * 2f, color, pays);
         }
 
-        return null;
+        return Step4(shu * 3f, color, pays);
     }
 
-    private static float? Step4(float shu, PimentColor color, string pays)
+    private static float Step4(float shu, PimentColor color, string pays)
     {
         // "Le piment a l'air joli" is never true in main.py, so it always goes to 9 or 6.
         return shu > 5f ? Step9(shu, color, pays) : Step6(shu, color, pays);
     }
 
-    private static float? Step5(float shu, PimentColor color, string pays)
+    private static float Step5(float shu, PimentColor color, string pays)
     {
         if (pays == Pays.Indonesie)
         {
@@ -76,7 +74,7 @@ public static class SpiceRecipe
         return color != PimentColor.Rouge ? shu + 15f : shu + 351f;
     }
 
-    private static float? Step6(float shu, PimentColor color, string pays)
+    private static float Step6(float shu, PimentColor color, string pays)
     {
         if (shu >= 5f && shu <= 6f)
         {
@@ -92,13 +90,13 @@ public static class SpiceRecipe
     }
 
     // Step 7 ("répétez votre étape précédente") is only reached from step 8, so it loops back into it.
-    private static float? Step8(float shu, PimentColor color, string pays)
+    private static float Step8(float shu, PimentColor color, string pays)
     {
         shu /= 2f;
         return shu > -2f && shu < 5f ? Step9(shu, color, pays) : Step8(shu, color, pays);
     }
 
-    private static float? Step9(float shu, PimentColor color, string pays)
+    private static float Step9(float shu, PimentColor color, string pays)
     {
         return Array.IndexOf(Pays.AmeriqueDuNord, pays) >= 0 ? shu + 4.4f : shu - 4.4f;
     }
