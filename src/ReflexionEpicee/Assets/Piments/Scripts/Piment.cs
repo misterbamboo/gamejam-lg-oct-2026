@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Piment
 {
+    
     // Niveau d'épice 0 à 10
     int shu;
 
