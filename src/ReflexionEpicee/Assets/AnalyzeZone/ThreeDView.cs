@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Hold the right mouse button and use W/A/S/D/Q/E to turn the object and look at it from every side.
+// Use W/A/S/D/Q/E to turn the object and look at it from every side (hold the right mouse button to stop).
 public class ThreeDView : MonoBehaviour
 {
     // Degrees per second.
@@ -12,7 +12,9 @@ public class ThreeDView : MonoBehaviour
     {
         var mouse = Mouse.current;
         var keyboard = Keyboard.current;
-        if (mouse == null || keyboard == null || !mouse.rightButton.isPressed)
+
+        // Turns while the right mouse button is NOT held (as in the latest version of this script).
+        if (mouse == null || keyboard == null || mouse.rightButton.isPressed)
         {
             return;
         }
