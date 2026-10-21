@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panier
       objectReference: {fileID: 0}
+    - target: {fileID: 7263238247136182312, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1562647606}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
