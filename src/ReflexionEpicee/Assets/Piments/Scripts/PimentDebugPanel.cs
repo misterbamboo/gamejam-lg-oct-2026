@@ -28,12 +28,15 @@ public class PimentDebugPanel : MonoBehaviour
     private void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard != null && keyboard.dKey.wasPressedThisFrame)
+        var mouse = Mouse.current;
+
+        // Right mouse + D turns the pepper (ThreeDView), so it doesn't toggle the panel.
+        var isTurning = mouse != null && mouse.rightButton.isPressed;
+        if (keyboard != null && keyboard.dKey.wasPressedThisFrame && !isTurning)
         {
             isVisible = !isVisible;
         }
 
-        var mouse = Mouse.current;
         var camera = Camera.main;
         if (mouse == null || camera == null || !mouse.leftButton.wasPressedThisFrame)
         {

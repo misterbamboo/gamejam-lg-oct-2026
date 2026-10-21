@@ -2905,7 +2905,7 @@ MonoBehaviour:
   colorSpeed: 3
   shuLabel: {fileID: 0}
   labelHeight: 0.3
-  labelDepth: 0.6
+  labelDepth: 1.5
   labelFontSize: 3
 --- !u!1 &7889422496716318443
 GameObject:

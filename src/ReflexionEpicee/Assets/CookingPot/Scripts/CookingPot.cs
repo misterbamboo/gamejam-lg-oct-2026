@@ -36,7 +36,7 @@ namespace Assets.CookingPotDomain.Scripts
 
         // Pushes the label behind the pot (away from the camera, horizontally) so a tilted camera doesn't see it overlap the pot.
         [SerializeField]
-        private float labelDepth = 1f;
+        private float labelDepth = 1.5f;
 
         [SerializeField]
         private float labelFontSize = 3f;
