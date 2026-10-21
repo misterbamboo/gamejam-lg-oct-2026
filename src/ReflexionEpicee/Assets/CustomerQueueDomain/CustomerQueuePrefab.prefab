@@ -162,3 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: PeppersPlease::CustomerPopupUIManager
   customerPopupUIPrefab: {fileID: 6871407262778361040, guid: 27831d41097302748b61ee80809f033e, type: 3}
   customerQueue: {fileID: 13582430322873925}
+  margin: 10
+  moveSpeed: 12
