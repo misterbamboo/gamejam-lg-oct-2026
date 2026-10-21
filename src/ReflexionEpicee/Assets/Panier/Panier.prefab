@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7802406435042174498}
   m_Layer: 0
   m_Name: Sphere (2)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 727487984570998352}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 810027300520452873}
   m_Layer: 0
   m_Name: Sphere (3)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 8641920876137517069}
   m_Layer: 0
   m_Name: Sphere (4)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -457,9 +457,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 900753140363904987}
+  - component: {fileID: 7263238247136182312}
   m_Layer: 0
   m_Name: Panier
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,6 +489,19 @@ Transform:
   - {fileID: 3321453805967314328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7263238247136182312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421550363185058572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ddcc23e9657e74d89791dedb46bb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PeppersPlease::PanierManager
+  Camera: {fileID: 0}
 --- !u!1 &5951967159391559709
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +516,7 @@ GameObject:
   - component: {fileID: 5982387291618642964}
   m_Layer: 0
   m_Name: Sphere (5)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,7 +628,7 @@ GameObject:
   - component: {fileID: 5389359825247626052}
   m_Layer: 0
   m_Name: Sphere (6)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,7 +740,7 @@ GameObject:
   - component: {fileID: 2077043894765584243}
   m_Layer: 0
   m_Name: Sphere (7)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -838,7 +852,7 @@ GameObject:
   - component: {fileID: 5602308899852685553}
   m_Layer: 0
   m_Name: Sphere (1)
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -950,7 +964,7 @@ GameObject:
   - component: {fileID: 912920618610327516}
   m_Layer: 0
   m_Name: Fond
-  m_TagString: Untagged
+  m_TagString: panier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
