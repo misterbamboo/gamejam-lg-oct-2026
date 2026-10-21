@@ -26,7 +26,8 @@ public class PanierManager : MonoBehaviour
                 // Use the hit variable to determine what was clicked on.
                 if (hit.transform.tag == "panier")
                 {
-                    EventBus.Publish(GameEvents.PimentRequested, "");
+                    EventBus.Publish(GameEvents.PimentRequested, new PimentRequested());
+                    Debug.Log("Piment requested");
                 }
             }
         }

@@ -363,9 +363,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1585244730352201939, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734848010280149797, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024654241811564638, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051444738484741572, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
     - target: {fileID: 5421550363185058572, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
       propertyPath: m_Name
       value: Panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421550363185058572, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951967159391559709, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7263238247136182312, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1562647606}
+    - target: {fileID: 7757441270002369124, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852704117274978664, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458976158145400465, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
+      objectReference: {fileID: 0}
+    - target: {fileID: 8504668930812819465, guid: 467d6570e2599ab4db46b63a5d8798b4, type: 3}
+      propertyPath: m_TagString
+      value: panier
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
