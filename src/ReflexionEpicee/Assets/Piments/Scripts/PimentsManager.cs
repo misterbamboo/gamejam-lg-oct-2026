@@ -6,11 +6,18 @@ using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 public class PimentsManager : MonoBehaviour
 {
+    public int Bal = 10;
+
     [SerializeField]
     GameObject pimentPrefab;
 
     [SerializeField]
     Vector3 pos;
+
+    [SerializeField]
+    GameObject drapeau;
+
+    GameObject currPiment;
 
     List<PimentData> piments = new();
 
@@ -23,6 +30,7 @@ public class PimentsManager : MonoBehaviour
 
     public void CreatePiment(PimentRequested pimentRequested)
     {
+        Destroy(currPiment);
         Debug.Log("Here");
         int indicePiment = UnityEngine.Random.Range(0, piments.Count);
         GameObject newPiment = Instantiate(pimentPrefab, pos, Quaternion.identity);
@@ -32,6 +40,13 @@ public class PimentsManager : MonoBehaviour
 
         // Load material
         newPiment.GetComponent<Renderer>().material = Resources.Load(piments[indicePiment].MatDir, typeof(Material)) as Material;
+
+        // Load drapeau
+        drapeau.GetComponent<Renderer>().material = Resources.Load("Drapeau/" + piments[indicePiment].Pays, typeof(Material)) as Material;
+
+        currPiment = newPiment;
+
+        bal--;
     }
 
     private static List<PimentData> GetPiments()
