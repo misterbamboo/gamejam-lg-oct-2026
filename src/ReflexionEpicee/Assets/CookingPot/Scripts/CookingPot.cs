@@ -156,7 +156,7 @@ namespace Assets.CookingPotDomain.Scripts
             sphereRenderer.material = chiliRenderer.material;
             sphereRenderer.material.color = HeatGradient.Evaluate(shu / ChiliPeppersMix.MaxShu);
 
-            sphere.AddComponent<Ladle>().Init(this, mainCamera, shu);
+            sphere.AddComponent<Ladle>().Init(this, shu);
         }
 
         private void RenderChili()
