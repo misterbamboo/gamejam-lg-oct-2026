@@ -1,14 +1,14 @@
 [
   {
-    "nom": 0,
-    "shu": "Piment1"
+    "shu": 0,
+    "nom": "Piment1"
   },
   {
-    "nom": 1,
-    "shu": "Piment2"
+    "shu": 1,
+    "nom": "Piment2"
   },
   {
-    "nom": 7,
-    "shu": "Piment3"
+    "shu": 7,
+    "nom": "Piment3"
   }
 ]
