@@ -52,10 +52,12 @@
     <Compile Include="Assets\CustomerQueueDomain\Entities\Customer.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Scripts\CustomerQueue.cs" />
     <Compile Include="Assets\Piments\Scripts\Piment.cs" />
+    <Compile Include="Assets\CustomerQueueDomain\Entities\CustomerReflexions.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\CustomerNames.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\PreferenceRange.cs" />
     <Compile Include="Assets\CustomerQueueDomain\UI\CustomerPopupUI.cs" />
     <Compile Include="Assets\CustomerQueueDomain\UI\CustomerPopupUIManager.cs" />
+    <Compile Include="Assets\CustomerQueueDomain\UI\PreferenceRangeBarUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
