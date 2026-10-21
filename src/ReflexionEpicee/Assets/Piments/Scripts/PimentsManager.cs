@@ -1,4 +1,5 @@
 using Assets.Shared;
+using TMPro;
 using UnityEngine;
 
 public class PimentsManager : MonoBehaviour
@@ -6,7 +7,7 @@ public class PimentsManager : MonoBehaviour
     public int Bal = 10;
 
     [SerializeField]
-    GameObject money;
+    TextMeshProUGUI money;
 
     [SerializeField]
     GameObject pimentPrefab;
@@ -64,6 +65,7 @@ public class PimentsManager : MonoBehaviour
 
         currPiment = newPiment;
 
+        money.text = "Argent : " + Bal + " $";
         Bal--;
     }
 
