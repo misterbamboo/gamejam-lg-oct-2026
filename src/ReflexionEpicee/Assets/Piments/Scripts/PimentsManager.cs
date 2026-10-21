@@ -6,6 +6,9 @@ public class PimentsManager : MonoBehaviour
     public int Bal = 10;
 
     [SerializeField]
+    GameObject money;
+
+    [SerializeField]
     GameObject pimentPrefab;
 
     [SerializeField]
