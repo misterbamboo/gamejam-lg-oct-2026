@@ -49,14 +49,18 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.23f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Shared\ForceVisibleMetaFiles.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\Customer.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Scripts\CustomerQueue.cs" />
+    <Compile Include="Assets\Piments\Scripts\DraggablePiment.cs" />
     <Compile Include="Assets\Shared\HeatGradient.cs" />
     <Compile Include="Assets\CookingPot\Scripts\TestPiment.cs" />
     <Compile Include="Assets\CookingPot\Scripts\TestPimentFeeder.cs" />
+    <Compile Include="Assets\Shared\TableFall.cs" />
     <Compile Include="Assets\Shared\GameEvents.cs" />
     <Compile Include="Assets\Piments\Scripts\Piment.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\CustomerReflexions.cs" />
+    <Compile Include="Assets\Piments\Scripts\PimentData.cs" />
     <Compile Include="Assets\Piments\Scripts\PimentsManager.cs" />
     <Compile Include="Assets\Piments\Scripts\IPiment.cs" />
     <Compile Include="Assets\CustomerQueueDomain\Entities\CustomerNames.cs" />

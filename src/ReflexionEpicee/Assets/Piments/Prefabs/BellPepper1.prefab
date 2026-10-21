@@ -75,6 +75,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6355358008956664551}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4068465887593991495}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5717724785757362099}
   m_SourcePrefab: {fileID: 100100000, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
 --- !u!1 &8722293477364450624 stripped
 GameObject:
@@ -93,3 +99,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71f86adf52b5e1478f4deaf35d89d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PeppersPlease::Piment
+  shu: 0
+  nom: 
+  pays: 
+  matDir: 
+  volume: 0.01
+  dryness: 0.01
+  bouncy: 0
+  slimy: 0
+  rough: 0
+  soft: 0
+  spiky: 0
+  reflection: 0
+  tint: 0
+--- !u!65 &4068465887593991495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722293477364450624}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.046947546, y: 0.04003277, z: 0.054473463}
+  m_Center: {x: 0.0023833849, y: -0.00038354285, z: -0.0010770541}
+--- !u!114 &5717724785757362099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722293477364450624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c964f30715ea48b409db1bcdd626d80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PeppersPlease::DraggablePiment

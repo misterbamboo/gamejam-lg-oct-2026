@@ -9,7 +9,7 @@ public class PimentsManager : MonoBehaviour
     [SerializeField]
     GameObject pimentPrefab;
 
-    List<Piment> piments = new();
+    List<PimentData> piments = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,12 +32,12 @@ public class PimentsManager : MonoBehaviour
         return newPiment;
     }
 
-    private List<Piment> GetPiments()
+    private List<PimentData> GetPiments()
     {
         using (StreamReader r = new StreamReader("Assets/Piments/JSON/Piment.json"))
         {
             string json = r.ReadToEnd();
-            List<Piment> piments = JsonConvert.DeserializeObject<List<Piment>>(json);
+            List<PimentData> piments = JsonConvert.DeserializeObject<List<PimentData>>(json);
             return piments;
         }
     }
