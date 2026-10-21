@@ -5,9 +5,9 @@ public class Piment : MonoBehaviour, IPiment
 {
     // Niveau d'épice 0 à 10
     [SerializeField]
-    int shu;
+    float shu;
 
-    public int Shu
+    public float Shu
     {
         get { return shu; }
         private set

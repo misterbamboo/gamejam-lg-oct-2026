@@ -7,7 +7,7 @@ namespace Assets.CookingPotDomain.Scripts
     {
         private const float Epsilon = 0.01f;
 
-        public int Shu { get; private set; }
+        public float Shu { get; private set; }
         public float Volume { get; private set; }
         public float Dryness { get; private set; }
         public float Bouncy { get; private set; }
