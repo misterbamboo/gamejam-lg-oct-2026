@@ -1,5 +1,6 @@
 # GameJam Lionel-Groulx (oct 2026)
 
+## PEPPERS PLEASE
 **Thème:** Réflexion épicée
 
 ## Équipe
