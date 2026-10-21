@@ -18,10 +18,12 @@ public class PimentsManager : MonoBehaviour
     void Start()
     {
         piments = GetPiments();
+        CreatePiment(new PimentRequested());
     }
 
     public void CreatePiment(PimentRequested pimentRequested)
     {
+        Debug.Log("Here");
         int indicePiment = UnityEngine.Random.Range(0, piments.Count);
         GameObject newPiment = Instantiate(pimentPrefab, pos, Quaternion.identity);
 
