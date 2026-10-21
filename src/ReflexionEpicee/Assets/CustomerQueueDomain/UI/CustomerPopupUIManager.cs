@@ -1,6 +1,8 @@
 using Assets.CustomerQueueDomain.Entities;
 using Assets.CustomerQueueDomain.Scripts;
+using Assets.Shared;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,16 +23,27 @@ public class CustomerPopupUIManager : MonoBehaviour
     private readonly List<CustomerPopupUI> usedPopups = new List<CustomerPopupUI>();
     private readonly Stack<CustomerPopupUI> unusedPopups = new Stack<CustomerPopupUI>();
 
+    private Canvas canvas;
+
+    private void Awake()
+    {
+        canvas = GetComponentInParent<Canvas>();
+    }
+
     private void OnEnable()
     {
         customerQueue.CustomerAdded += OnCustomerAdded;
         customerQueue.CustomerRemoved += OnCustomerRemoved;
+        EventBus.Subscribe<Vector2>(GameEvents.LadleDragged, OnLadleDragged);
+        EventBus.Subscribe<LadleDrop>(GameEvents.LadleReleased, OnLadleReleased);
     }
 
     private void OnDisable()
     {
         customerQueue.CustomerAdded -= OnCustomerAdded;
         customerQueue.CustomerRemoved -= OnCustomerRemoved;
+        EventBus.Unsubscribe<Vector2>(GameEvents.LadleDragged, OnLadleDragged);
+        EventBus.Unsubscribe<LadleDrop>(GameEvents.LadleReleased, OnLadleReleased);
     }
 
     // Slides every used popup towards its slot, so remaining cards close the gap smoothly.
@@ -80,6 +93,45 @@ public class CustomerPopupUIManager : MonoBehaviour
             usedPopups.Remove(popup);
             Release(popup);
         });
+    }
+
+    private void OnLadleDragged(Vector2 screenPosition)
+    {
+        var hovered = PopupAt(screenPosition);
+        foreach (var popup in usedPopups)
+        {
+            popup.SetHighlighted(popup == hovered);
+        }
+    }
+
+    private void OnLadleReleased(LadleDrop drop)
+    {
+        var popup = PopupAt(drop.ScreenPosition);
+        foreach (var used in usedPopups)
+        {
+            used.SetHighlighted(false);
+        }
+
+        if (popup == null)
+        {
+            return;
+        }
+
+        var customer = popup.Customer;
+        var taste = customer.Preference.TasteOf(drop.Shu);
+        EventBus.Publish(GameEvents.ChiliServed, new ChiliServing(customer.Name, drop.Shu, taste));
+        customerQueue.Remove(customer);
+    }
+
+    // The 3D ladle and the UI cards share the mouse's screen position, so a rect test finds the card under it.
+    private CustomerPopupUI PopupAt(Vector2 screenPosition)
+    {
+        var eventCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+
+        // Cards still shrinking away belong to customers already removed from the queue.
+        return usedPopups.Find(p =>
+            customerQueue.All.Contains(p.Customer) &&
+            RectTransformUtility.RectangleContainsScreenPoint((RectTransform)p.transform, screenPosition, eventCamera));
     }
 
     // Stack popups from the top-right corner towards the left, first customer rightmost.
