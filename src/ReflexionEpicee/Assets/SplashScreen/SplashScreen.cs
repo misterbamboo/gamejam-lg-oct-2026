@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SplashScreen : MonoBehaviour
 {
     [SerializeField]
-    private string sceneToLoad = "Version1";
+    private string sceneToLoad = "Version2";
 
     // Hooked to the Play button's OnClick.
     public void Play()

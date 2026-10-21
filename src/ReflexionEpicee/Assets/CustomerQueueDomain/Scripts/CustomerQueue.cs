@@ -18,6 +18,9 @@ namespace Assets.CustomerQueueDomain.Scripts
 
         [SerializeField] private float SpawnInterval = 10f;
 
+        // When the last customer leaves, the next one comes in this fast.
+        [SerializeField] private float EmptyQueueDelay = 2f;
+
         private List<Customer> Customers { get; set; } = new List<Customer>();
 
         // Starts at 0 so the first customer arrives immediately.
@@ -51,6 +54,11 @@ namespace Assets.CustomerQueueDomain.Scripts
         {
             if (Customers.Remove(customer))
             {
+                if (Size == 0)
+                {
+                    timeUntilNextCustomer = Mathf.Min(timeUntilNextCustomer, EmptyQueueDelay);
+                }
+
                 CustomerRemoved?.Invoke(customer);
             }
         }

@@ -20,6 +20,10 @@ public class CustomerPopupUIManager : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 12f;
 
+    // What a customer pays for a chili they like.
+    [SerializeField]
+    private int chiliPrice = 5;
+
     private readonly List<CustomerPopupUI> usedPopups = new List<CustomerPopupUI>();
     private readonly Stack<CustomerPopupUI> unusedPopups = new Stack<CustomerPopupUI>();
 
@@ -119,7 +123,11 @@ public class CustomerPopupUIManager : MonoBehaviour
 
         var customer = popup.Customer;
         var taste = customer.Preference.TasteOf(drop.Shu);
-        EventBus.Publish(GameEvents.ChiliServed, new ChiliServing(customer.Name, drop.Shu, taste));
+        var payment = customer.Likes(drop.Shu) ? chiliPrice : 0;
+
+        // The card shows the reaction for a moment, then shrinks away when the customer leaves the queue.
+        popup.React(customer.ReactionTo(drop.Shu));
+        EventBus.Publish(GameEvents.ChiliServed, new ChiliServing(customer.Name, drop.Shu, taste, payment));
         customerQueue.Remove(customer);
     }
 

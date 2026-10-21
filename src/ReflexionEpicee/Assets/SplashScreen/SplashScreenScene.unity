@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd9d59287484e5488fcb7ba7de30dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PeppersPlease::SplashScreen
-  sceneToLoad: Version1
+  sceneToLoad: Version2
 --- !u!4 &1365591184
 Transform:
   m_ObjectHideFlags: 0

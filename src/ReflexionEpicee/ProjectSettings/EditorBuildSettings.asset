@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/SplashScreen/SplashScreenScene.unity
     guid: f1aca71d30adf1144ad80341def0ed80
   - enabled: 1
-    path: Assets/Scenes/Version1.unity
-    guid: a90a679792efb93478e5bacf49fe17ba
+    path: Assets/Scenes/Version2.unity
+    guid: 9b050cf80f1eca146abfa75d6ebc981d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
