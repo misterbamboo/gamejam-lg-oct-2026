@@ -1,0 +1,46 @@
+{
+  "Peru": {
+    "Brésil": {
+      "Langues": [
+        { "Portugais": 100 }
+      ]
+    },
+    "Chine": {
+      "Langues": [
+        { "Mandarin": 65 }
+      ]
+    },
+    "Espagne": {
+      "Langues": [
+        { "Espagnol": 100 }
+      ]
+    },
+    "Inde": {
+      "Langues": [
+        { "Hindi": 43.6 },
+        { "Bengali": 8 },
+        { "Marathi": 6.86 }
+      ]
+    },
+    "Japon": {
+      "Langues": [
+        { "Japonais": 100 }
+      ]
+    },
+    "Langues": [
+      { "Espagnol": 82.6 },
+      { "Quechua": 13.9 }
+    ],
+    "Mexique": {
+      "Langues": [
+        { "Espagnol": 100 }
+      ]
+    },
+    "Iraq": {
+      "Lanuges": [
+        { "Arabe": 65 },
+        { "Kurde": 22 },
+        {"Azéri": }
+      ]
+    }
+  }
