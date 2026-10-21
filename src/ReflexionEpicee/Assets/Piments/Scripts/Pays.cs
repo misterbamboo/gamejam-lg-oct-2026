@@ -7,7 +7,7 @@ public static class Pays
     public const string Espagne = "Espagne";
     public const string Inde = "Inde";
     public const string Indonesie = "Indonésie";
-    public const string Irak = "Irak";
+    public const string Irak = "Iraq"; // Matches the flag file name in Resources/Drapeau
     public const string Mexique = "Mexique";
     public const string Vietnam = "Vietnam";
     public const string EtatsUnis = "États-Unis";

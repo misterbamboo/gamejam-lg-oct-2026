@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PimentsManager : MonoBehaviour
 {
+    public int Bal = 10;
+
     [SerializeField]
     GameObject pimentPrefab;
 
@@ -12,6 +14,11 @@ public class PimentsManager : MonoBehaviour
     // How many peppers are generated each time the batch runs out.
     [SerializeField]
     int batchSize = 10;
+
+    [SerializeField]
+    GameObject drapeau;
+
+    GameObject currPiment;
 
     PimentBatch piments;
 
@@ -28,6 +35,8 @@ public class PimentsManager : MonoBehaviour
 
     public void CreatePiment(PimentRequested pimentRequested)
     {
+        Destroy(currPiment);
+
         var data = piments.Take();
         Debug.Log($"{data} ({piments.Remaining} left in batch)");
 
@@ -38,6 +47,21 @@ public class PimentsManager : MonoBehaviour
 
         // Load material
         newPiment.GetComponent<Renderer>().material = Resources.Load(data.MatDir, typeof(Material)) as Material;
+
+        // Load drapeau: the flags in Resources/Drapeau are images, so they go on the material's texture
+        var flag = Resources.Load<Texture2D>("Drapeau/" + data.Pays);
+        if (flag == null)
+        {
+            Debug.LogWarning($"No flag image at Resources/Drapeau/{data.Pays}");
+        }
+        else if (drapeau != null)
+        {
+            drapeau.GetComponent<Renderer>().material.mainTexture = flag;
+        }
+
+        currPiment = newPiment;
+
+        Bal--;
     }
 
     private void OnEnable()
