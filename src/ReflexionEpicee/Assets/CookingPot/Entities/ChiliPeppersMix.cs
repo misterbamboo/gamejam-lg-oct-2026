@@ -1,8 +1,9 @@
 namespace Assets.CookingPotDomain.Entities
 {
-    public class Chili
+    public class ChiliPeppersMix
     {
         public const int Capacity = 10;
+        public const float MaxShu = 10f;
 
         public int Portions { get; private set; }
 
@@ -13,14 +14,19 @@ namespace Assets.CookingPotDomain.Entities
         public bool IsFull => Portions >= Capacity;
         public bool IsEmpty => Portions <= 0;
 
-        public bool TryAdd(IPiment piment)
+        public bool TryAdd(IPiment piment) => TryMix(piment.Shu);
+
+        // A scoop poured back mixes in with its own heat.
+        public bool TryPourBack(float shu) => TryMix(shu);
+
+        private bool TryMix(float shu)
         {
             if (IsFull)
             {
                 return false;
             }
 
-            Shu = (Shu * Portions + piment.Shu) / (Portions + 1);
+            Shu = (Shu * Portions + shu) / (Portions + 1);
             Portions++;
             return true;
         }

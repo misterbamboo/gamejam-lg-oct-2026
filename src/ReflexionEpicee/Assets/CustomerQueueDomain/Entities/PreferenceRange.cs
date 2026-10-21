@@ -18,6 +18,14 @@ namespace Assets.CustomerQueueDomain.Entities
             Max = max > MaxHeat ? MaxHeat : max;
         }
 
+        // Taste = 10 - abs(Heat - Request): anywhere inside the range is perfect,
+        // outside it loses one point per unit of distance from the nearest edge.
+        public float TasteOf(float heat)
+        {
+            var distance = heat < Min ? Min - heat : heat > Max ? heat - Max : 0f;
+            return 10f - distance;
+        }
+
         internal string DisplayText()
         {
             return $"{Min} to {Max}";

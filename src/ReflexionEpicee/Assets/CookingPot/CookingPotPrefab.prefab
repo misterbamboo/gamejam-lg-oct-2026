@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2424570982893530635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: -0.226, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2859,6 +2859,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3516152499484693952}
+  - component: {fileID: 2562132207952277915}
+  - component: {fileID: 7280721024525654136}
   m_Layer: 0
   m_Name: CookingPotPrefab
   m_TagString: Untagged
@@ -2884,6 +2886,37 @@ Transform:
   - {fileID: 6549279235999211553}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2562132207952277915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769861521712792098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62907fd86abfea43a3c609de8af0ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PeppersPlease::Assets.CookingPotDomain.Scripts.CookingPot
+  chiliTransform: {fileID: 6549279235999211553}
+  emptyY: -0.226
+  fullY: 0.589
+  levelSpeed: 6
+  ladleSize: 0.3
+--- !u!114 &7280721024525654136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769861521712792098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06fe0cb88bcde3489f93b500c35abac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PeppersPlease::Assets.CookingPotDomain.Scripts.TestPimentFeeder
+  cookingPot: {fileID: 2562132207952277915}
+  pimentsOnStart: 10
 --- !u!1 &7889422496716318443
 GameObject:
   m_ObjectHideFlags: 0

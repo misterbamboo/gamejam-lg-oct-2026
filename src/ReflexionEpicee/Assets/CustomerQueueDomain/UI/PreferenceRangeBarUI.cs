@@ -1,18 +1,11 @@
 using Assets.CustomerQueueDomain.Entities;
+using Assets.Shared;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PreferenceRangeBarUI : MonoBehaviour
 {
-    private static readonly Color[] HeatColors =
-    {
-        Color.green,
-        Color.yellow,
-        new Color(1f, 0.5f, 0f),
-        Color.red,
-    };
-
     [SerializeField]
     private RectTransform rangeFill;
 
@@ -35,7 +28,7 @@ public class PreferenceRangeBarUI : MonoBehaviour
         rangeFill.anchorMax = new Vector2(maxRatio, 1f);
         rangeFill.offsetMin = Vector2.zero;
         rangeFill.offsetMax = Vector2.zero;
-        rangeFill.GetComponent<Graphic>().color = HeatColor(preference.Mid / PreferenceRange.MaxHeat);
+        rangeFill.GetComponent<Graphic>().color = HeatGradient.Evaluate(preference.Mid / PreferenceRange.MaxHeat);
 
         PlaceLabel(minLabel, minRatio, preference.Min);
         PlaceLabel(maxLabel, maxRatio, preference.Max);
@@ -51,13 +44,5 @@ public class PreferenceRangeBarUI : MonoBehaviour
         rect.anchorMax = new Vector2(ratio, 0f);
         rect.pivot = new Vector2(0.5f, 1f);
         rect.anchoredPosition = new Vector2(0f, -labelSpacing);
-    }
-
-    // Lerps through green, yellow, orange, red.
-    private static Color HeatColor(float ratio)
-    {
-        var scaled = Mathf.Clamp01(ratio) * (HeatColors.Length - 1);
-        var index = Mathf.Min((int)scaled, HeatColors.Length - 2);
-        return Color.Lerp(HeatColors[index], HeatColors[index + 1], scaled - index);
     }
 }
