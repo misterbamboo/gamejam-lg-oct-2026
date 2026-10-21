@@ -1,69 +1,43 @@
 using Assets.Shared;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-// Lets the player drag a pepper and drop it into the cooking pot (or on the table).
-[RequireComponent(typeof(Piment), typeof(BoxCollider))]
+// Lets the player drag a pepper and drop it into the cooking pot (or let it fall with physics).
+[RequireComponent(typeof(Piment), typeof(BoxCollider), typeof(Grabbable))]
 public class DraggablePiment : MonoBehaviour
 {
     private Piment piment;
-    private Renderer pimentRenderer;
-    private Camera mainCamera;
-    private bool isDragging;
-    private float dragDepth;
-    private float fallSpeed;
+    private Grabbable grabbable;
 
     private void Awake()
     {
         piment = GetComponent<Piment>();
-        pimentRenderer = GetComponentInChildren<Renderer>();
-        mainCamera = Camera.main;
-    }
 
-    private void Update()
-    {
-        var mouse = Mouse.current;
-        if (mouse == null)
+        // RequireComponent doesn't add Grabbable to prefabs that already had this component.
+        grabbable = GetComponent<Grabbable>();
+        if (grabbable == null)
         {
-            return;
-        }
-
-        var screenPosition = mouse.position.ReadValue();
-
-        if (!isDragging)
-        {
-            TableFall.Step(transform, pimentRenderer, ref fallSpeed);
-
-            if (mouse.leftButton.wasPressedThisFrame && IsUnder(screenPosition))
-            {
-                isDragging = true;
-                dragDepth = mainCamera.WorldToScreenPoint(transform.position).z;
-            }
-
-            return;
-        }
-
-        // Keep the same distance from the camera so the pepper doesn't jump in depth.
-        transform.position = mainCamera.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, dragDepth));
-
-        if (mouse.leftButton.wasReleasedThisFrame)
-        {
-            isDragging = false;
-            fallSpeed = 0f;
-
-            // The pot takes it if dropped over it and not full; otherwise it falls on the table.
-            var drop = new PimentDrop(screenPosition, piment);
-            EventBus.Publish(GameEvents.PimentDropped, drop);
-            if (drop.IsTaken)
-            {
-                Destroy(gameObject);
-            }
+            grabbable = gameObject.AddComponent<Grabbable>();
         }
     }
 
-    private bool IsUnder(Vector2 screenPosition)
+    private void OnEnable()
     {
-        var ray = mainCamera.ScreenPointToRay(screenPosition);
-        return Physics.Raycast(ray, out var hit) && hit.transform.IsChildOf(transform);
+        grabbable.Released += OnReleased;
+    }
+
+    private void OnDisable()
+    {
+        grabbable.Released -= OnReleased;
+    }
+
+    // The pot takes it if dropped over it and not full; otherwise physics takes over.
+    private void OnReleased(Vector2 screenPosition)
+    {
+        var drop = new PimentDrop(screenPosition, piment);
+        EventBus.Publish(GameEvents.PimentDropped, drop);
+        if (drop.IsTaken)
+        {
+            Destroy(gameObject);
+        }
     }
 }
