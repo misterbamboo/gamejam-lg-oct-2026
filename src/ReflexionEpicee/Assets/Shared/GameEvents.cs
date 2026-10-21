@@ -61,11 +61,15 @@ namespace Assets.Shared
         public float Shu { get; private set; }
         public float Taste { get; private set; }
 
-        public ChiliServing(string customerName, float shu, float taste)
+        // Money the customer pays for it (0 when they don't like it).
+        public int Payment { get; private set; }
+
+        public ChiliServing(string customerName, float shu, float taste, int payment)
         {
             CustomerName = customerName;
             Shu = shu;
             Taste = taste;
+            Payment = payment;
         }
     }
 

@@ -2,7 +2,7 @@ using Assets.CookingPotDomain.Entities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Debug only: press D to show the values of the last pepper clicked, top-left of the screen.
+// Debug only: press F1 to show the values of the last pepper clicked, top-left of the screen.
 public class PimentDebugPanel : MonoBehaviour
 {
     private const float Width = 320f;
@@ -28,12 +28,14 @@ public class PimentDebugPanel : MonoBehaviour
     private void Update()
     {
         var keyboard = Keyboard.current;
-        if (keyboard != null && keyboard.dKey.wasPressedThisFrame)
+        var mouse = Mouse.current;
+
+        // F1 rather than D: W/A/S/D turn the pepper (ThreeDView).
+        if (keyboard != null && keyboard.f1Key.wasPressedThisFrame)
         {
             isVisible = !isVisible;
         }
 
-        var mouse = Mouse.current;
         var camera = Camera.main;
         if (mouse == null || camera == null || !mouse.leftButton.wasPressedThisFrame)
         {
@@ -65,7 +67,7 @@ public class PimentDebugPanel : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(10f, 10f, Width, Screen.height - 20f));
         GUILayout.BeginVertical(GUI.skin.box);
-        Line("<b>DEBUG PIMENT</b>  (D pour fermer)");
+        Line("<b>DEBUG PIMENT</b>  (F1 pour fermer)");
 
         // A pepper dropped in the pot is destroyed; Unity's == null catches that.
         if (selected == null)

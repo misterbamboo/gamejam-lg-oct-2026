@@ -88,6 +88,9 @@ public class Piment : MonoBehaviour, IPiment
     public float Refraction => 1f - reflection;
     public float Tint => tint;
 
+    // The color of the material PimentsManager put on it (Resources/Materials).
+    public Color DisplayColor => GetComponentInChildren<Renderer>().sharedMaterial.color;
+
     public Piment(int shu, string nom, string pays, string matDir)
     {
         Shu = shu;

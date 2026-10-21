@@ -81,6 +81,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5717724785757362099}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7391046528130492817}
   m_SourcePrefab: {fileID: 100100000, guid: aba8ee936a7253840a40b0179790f77e, type: 3}
 --- !u!1 &8722293477364450624 stripped
 GameObject:
@@ -145,3 +148,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c964f30715ea48b409db1bcdd626d80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PeppersPlease::DraggablePiment
+--- !u!114 &7391046528130492817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722293477364450624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0904bde2768af574e82f2924f0d82d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PeppersPlease::ThreeDView
+  rotationSpeed: 90

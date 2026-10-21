@@ -1,23 +1,38 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+
+// Use W/A/S/D/Q/E to turn the object and look at it from every side (hold the right mouse button to stop).
 public class ThreeDView : MonoBehaviour
 {
+    // Degrees per second.
+    [SerializeField]
+    float rotationSpeed = 90f;
+
     public void Update()
     {
-        
-        while(!Input.GetMouseButton(1))
+        var mouse = Mouse.current;
+        var keyboard = Keyboard.current;
+
+        // Turns while the right mouse button is NOT held (as in the latest version of this script).
+        if (mouse == null || keyboard == null || mouse.rightButton.isPressed)
         {
-            if (Input.GetKey(KeyCode.D))
-                transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime, Space.Self);
-            if (Input.GetKey(KeyCode.A))
-                transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime, Space.Self);
-            if (Input.GetKey(KeyCode.W))
-                transform.Rotate(new Vector3(1, 0,0) * Time.deltaTime, Space.Self);
-            if (Input.GetKey(KeyCode.S))
-                transform.Rotate(new Vector3(-1, 0, 0) * Time.deltaTime, Space.Self);
-            if (Input.GetKey(KeyCode.Q))
-                transform.Rotate(new Vector3(0, 0, 1) * Time.deltaTime, Space.Self);
-            if (Input.GetKey(KeyCode.E))
-                transform.Rotate(new Vector3(0, 0, -1) * Time.deltaTime, Space.Self);
+            return;
         }
+
+        var rotation = Vector3.zero;
+        if (keyboard.dKey.isPressed)
+            rotation.y += 1f;
+        if (keyboard.aKey.isPressed)
+            rotation.y -= 1f;
+        if (keyboard.wKey.isPressed)
+            rotation.x += 1f;
+        if (keyboard.sKey.isPressed)
+            rotation.x -= 1f;
+        if (keyboard.qKey.isPressed)
+            rotation.z += 1f;
+        if (keyboard.eKey.isPressed)
+            rotation.z -= 1f;
+
+        transform.Rotate(rotation * rotationSpeed * Time.deltaTime, Space.Self);
     }
 }

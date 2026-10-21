@@ -65,17 +65,35 @@ public class PimentsManager : MonoBehaviour
 
         currPiment = newPiment;
 
-        money.text = "Argent : " + Bal + " $";
+        // Each pepper costs 1 $.
         Bal--;
+        RefreshMoney();
+    }
+
+    // Customers pay for the chili they liked.
+    private void OnChiliServed(ChiliServing serving)
+    {
+        Bal += serving.Payment;
+        RefreshMoney();
+    }
+
+    private void RefreshMoney()
+    {
+        if (money != null)
+        {
+            money.text = "Argent : " + Bal + " $";
+        }
     }
 
     private void OnEnable()
     {
         EventBus.Subscribe<PimentRequested>(GameEvents.PimentRequested, CreatePiment);
+        EventBus.Subscribe<ChiliServing>(GameEvents.ChiliServed, OnChiliServed);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<PimentRequested>(GameEvents.PimentRequested, CreatePiment);
+        EventBus.Unsubscribe<ChiliServing>(GameEvents.ChiliServed, OnChiliServed);
     }
 }

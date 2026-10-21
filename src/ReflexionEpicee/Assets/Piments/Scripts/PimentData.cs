@@ -10,6 +10,7 @@ public class PimentData : IPiment
     public string Nom { get; private set; }
     public string Pays { get; private set; }
     public string MatDir => "Materials/" + Couleur;
+    public Color DisplayColor => Resources.Load<Material>(MatDir).color;
 
     public float Shu { get; private set; }
     public float Volume { get; private set; }

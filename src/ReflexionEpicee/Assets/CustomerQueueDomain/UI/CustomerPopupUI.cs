@@ -24,8 +24,13 @@ public class CustomerPopupUI : MonoBehaviour
     [SerializeField]
     private float highlightSpeed = 15f;
 
+    // How long the customer's reaction stays readable before the card shrinks.
+    [SerializeField]
+    private float reactionDuration = 1f;
+
     private bool isAnimating;
     private bool isHighlighted;
+    private float holdBeforeDisappear;
 
     public Customer Customer { get; private set; }
 
@@ -55,11 +60,19 @@ public class CustomerPopupUI : MonoBehaviour
         preferenceRangeBar.Render(customer.Preference);
     }
 
+    // Replaces the message and keeps the card on screen a moment longer when it disappears.
+    public void React(string message)
+    {
+        preferenceText.text = message;
+        holdBeforeDisappear = reactionDuration;
+    }
+
     public void ResetVisual()
     {
         StopAllCoroutines();
         isAnimating = false;
         isHighlighted = false;
+        holdBeforeDisappear = 0f;
         transform.localScale = Vector3.one;
         gameObject.SetActive(true);
     }
@@ -73,7 +86,17 @@ public class CustomerPopupUI : MonoBehaviour
     public void PlayDisappear(Action onComplete)
     {
         StopAllCoroutines();
-        StartCoroutine(AnimateScale(transform.localScale.x, 0f, onComplete));
+        StartCoroutine(Disappear(onComplete));
+    }
+
+    private IEnumerator Disappear(Action onComplete)
+    {
+        if (holdBeforeDisappear > 0f)
+        {
+            yield return new WaitForSeconds(holdBeforeDisappear);
+        }
+
+        yield return AnimateScale(transform.localScale.x, 0f, onComplete);
     }
 
     private IEnumerator AnimateScale(float from, float to, Action onComplete)

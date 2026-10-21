@@ -15,6 +15,11 @@
 
         public string Reflexion { get; private set; }
 
+        public bool Likes(float shu) => shu >= Preference.Min && shu <= Preference.Max;
+
+        // What the customer says after tasting the chili.
+        public string ReactionTo(float shu) => Likes(shu) ? "Thanks !" : "Eurk !";
+
         internal static Customer Regular()
         {
             var rangeSize = RoundToQuarter(UnityEngine.Random.Range(3f, 5f));
