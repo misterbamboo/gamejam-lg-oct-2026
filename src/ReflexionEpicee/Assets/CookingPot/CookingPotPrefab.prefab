@@ -2860,7 +2860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3516152499484693952}
   - component: {fileID: 2562132207952277915}
-  - component: {fileID: 7280721024525654136}
   m_Layer: 0
   m_Name: CookingPotPrefab
   m_TagString: Untagged
@@ -2903,20 +2902,11 @@ MonoBehaviour:
   fullY: 1.134
   levelSpeed: 6
   ladleSize: 0.3
---- !u!114 &7280721024525654136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7769861521712792098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06fe0cb88bcde3489f93b500c35abac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: PeppersPlease::Assets.CookingPotDomain.Scripts.TestPimentFeeder
-  cookingPot: {fileID: 2562132207952277915}
-  pimentsOnStart: 10
+  colorSpeed: 3
+  shuLabel: {fileID: 0}
+  labelHeight: 0.3
+  labelDepth: 0.6
+  labelFontSize: 3
 --- !u!1 &7889422496716318443
 GameObject:
   m_ObjectHideFlags: 0

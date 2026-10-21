@@ -4,6 +4,9 @@ public interface IPiment
     /// <summary>Spice level, 0 to 10.</summary>
     float Shu { get; }
 
+    /// <summary>The pepper's visible color, mixed into the chili.</summary>
+    UnityEngine.Color DisplayColor { get; }
+
     /// <summary>0 &lt; Volume &lt;= 1</summary>
     float Volume { get; }
 

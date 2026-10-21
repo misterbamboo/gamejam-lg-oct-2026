@@ -13,11 +13,15 @@ namespace Assets.CookingPotDomain.Scripts
         // Heat of the chili when it was scooped.
         public float Shu { get; private set; }
 
+        // Color of the chili when it was scooped.
+        public Color Color { get; private set; }
+
         // Starts held, so the click that created it keeps dragging it.
-        public void Init(CookingPot pot, float shu)
+        public void Init(CookingPot pot, float shu, Color color)
         {
             cookingPot = pot;
             Shu = shu;
+            Color = color;
 
             var grabbable = gameObject.AddComponent<Grabbable>();
             grabbable.Dragged += OnDragged;
