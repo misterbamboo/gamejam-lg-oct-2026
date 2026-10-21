@@ -1,6 +1,7 @@
 using Assets.Shared;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PimentsManager : MonoBehaviour
 {
@@ -22,7 +23,16 @@ public class PimentsManager : MonoBehaviour
     [SerializeField]
     GameObject drapeau;
 
+    // Going below 0 $ loses the game and returns to this scene after a short pause.
+    [SerializeField]
+    string gameOverScene = "SplashScreenScene";
+
+    [SerializeField]
+    float gameOverDelay = 2f;
+
     GameObject currPiment;
+
+    bool isGameOver;
 
     PimentBatch piments;
 
@@ -83,6 +93,22 @@ public class PimentsManager : MonoBehaviour
         {
             money.text = "Argent : " + Bal + " $";
         }
+
+        if (Bal < 0 && !isGameOver)
+        {
+            isGameOver = true;
+            if (money != null)
+            {
+                money.text = "Faillite ! " + Bal + " $";
+            }
+
+            Invoke(nameof(BackToSplashScreen), gameOverDelay);
+        }
+    }
+
+    private void BackToSplashScreen()
+    {
+        SceneManager.LoadScene(gameOverScene);
     }
 
     private void OnEnable()

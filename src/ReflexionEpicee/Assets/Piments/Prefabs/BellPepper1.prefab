@@ -160,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0904bde2768af574e82f2924f0d82d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PeppersPlease::ThreeDView
-  rotationSpeed: 90
+  rotationSpeed: 400

@@ -6,7 +6,7 @@ public class ThreeDView : MonoBehaviour
 {
     // Degrees per second.
     [SerializeField]
-    float rotationSpeed = 90f;
+    float rotationSpeed = 400f;
 
     public void Update()
     {

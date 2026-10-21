@@ -7,6 +7,8 @@
  - Includes menu command to run manually == Tools --> AutoSwitchMaterial (EG) --> Fix Materials
  */
 
+// Editor-only: our PeppersPlease.asmdef compiles every script under Assets into the game, so keep UnityEditor out of builds.
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using System.IO;
@@ -177,4 +179,4 @@ namespace EtherealGrace.MaterialTools
         }
     }
 }
-
+#endif

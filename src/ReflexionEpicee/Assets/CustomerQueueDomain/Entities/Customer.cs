@@ -22,8 +22,8 @@
 
         internal static Customer Regular()
         {
-            var rangeSize = RoundToQuarter(UnityEngine.Random.Range(3f, 5f));
-            var min = RoundToQuarter(UnityEngine.Random.Range(0f, 5f - rangeSize));
+            var rangeSize = RoundToQuarter(UnityEngine.Random.Range(1f, 3f));
+            var min = RoundToQuarter(UnityEngine.Random.Range(0f, PreferenceRange.MaxHeat - rangeSize));
             var max = min + rangeSize;
             var preference = new PreferenceRange(min, max);
 
