@@ -1,3 +1,4 @@
+using Assets.Shared;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +17,7 @@ public class PimentsManager : MonoBehaviour
     {
         piments = GetPiments();
         Debug.Log(piments[0]);
-        CreatePiment(0, new Vector3(0,0,0));
+        CreatePiment(0, new Vector3(0, 0, 0));
     }
 
     public GameObject CreatePiment(int indice, Vector3 pos)
@@ -40,5 +41,9 @@ public class PimentsManager : MonoBehaviour
             List<PimentData> piments = JsonConvert.DeserializeObject<List<PimentData>>(json);
             return piments;
         }
+    }
+    private void OnEnable()
+    {
+        EventBus.Subscribe<ChiliServing>(GameEvents.PimentRequested, CreatePiment);
     }
 }
