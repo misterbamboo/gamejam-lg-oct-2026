@@ -1,4 +1,4 @@
-
+import random
 def step1(shu, color, pays):
     if color == "Rouge":
         shu += 3
@@ -53,9 +53,7 @@ def step4(shu, color, pays):
 
 def step5(shu, color, pays):
     if pays == "Indonésie":
-        # Le document dit : niveau actuel + 5 ou - 3.
-        # Il ne précise pas la condition permettant de choisir.
-        return shu + 5
+        return shu + random.choice([3, -3])
     elif color != "Rouge":
         shu += 15
         return niveau_final(shu)
