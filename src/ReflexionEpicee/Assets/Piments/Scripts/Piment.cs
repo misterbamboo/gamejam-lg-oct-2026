@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Piment
 {
-    
+
     // Niveau d'épice 0 à 10
     int shu;
 
@@ -30,9 +30,18 @@ public class Piment
         private set { nom = value; }
     }
 
-    public Piment(int shu, string nom)
+    string matDir;
+
+    public string MatDir
+    {
+        get { return matDir; }
+        private set { matDir = value; }
+    }
+
+    public Piment(int shu, string nom, string matDir)
     {
         Shu = shu;
         Nom = nom;
+        MatDir = matDir;
     }
 }
