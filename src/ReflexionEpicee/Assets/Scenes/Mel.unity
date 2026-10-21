@@ -389,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 7773159220805727325, guid: e014a955ee5265b4ea83bd36fb51e059, type: 3}
       propertyPath: pimentPrefab
       value: 
-      objectReference: {fileID: 8722293477364450624, guid: fedef5bfb69a0c34fa42857f20f47713, type: 3}
+      objectReference: {fileID: 8722293477364450624, guid: 0439ede091dfbab42b5bd8d6907ca364, type: 3}
     - target: {fileID: 8172273387334646983, guid: e014a955ee5265b4ea83bd36fb51e059, type: 3}
       propertyPath: m_Name
       value: PimentsManager
