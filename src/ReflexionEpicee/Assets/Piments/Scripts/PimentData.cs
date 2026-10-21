@@ -24,36 +24,27 @@ public class PimentData : IPiment
     public float Refraction => 1f - Reflection;
     public float Tint { get; private set; }
 
-    // Rerolls until the spice instructions give an answer, since some color/country pairs have none.
     public static PimentData Random()
     {
-        while (true)
-        {
-            var couleur = RandomColor();
-            var pays = global::Pays.Random();
-            var shu = SpiceRecipe.Evaluate(couleur, pays);
-            if (!shu.HasValue)
-            {
-                continue;
-            }
+        var couleur = RandomColor();
+        var pays = global::Pays.Random();
 
-            return new PimentData
-            {
-                Couleur = couleur,
-                Pays = pays,
-                Nom = $"Piment {couleur} {pays}",
-                Shu = shu.Value,
-                Volume = UnityEngine.Random.Range(MinPositive, 1f),
-                Dryness = UnityEngine.Random.Range(MinPositive, 1f),
-                Bouncy = UnityEngine.Random.Range(MinPositive, 1f),
-                Slimy = UnityEngine.Random.Range(MinPositive, 1f),
-                Rough = UnityEngine.Random.Range(MinPositive, 1f),
-                Soft = UnityEngine.Random.Range(MinPositive, 1f),
-                Spiky = UnityEngine.Random.Range(MinPositive, 1f),
-                Reflection = UnityEngine.Random.value,
-                Tint = UnityEngine.Random.value,
-            };
-        }
+        return new PimentData
+        {
+            Couleur = couleur,
+            Pays = pays,
+            Nom = $"Piment {couleur} {pays}",
+            Shu = SpiceRecipe.Evaluate(couleur, pays),
+            Volume = UnityEngine.Random.Range(MinPositive, 1f),
+            Dryness = UnityEngine.Random.Range(MinPositive, 1f),
+            Bouncy = UnityEngine.Random.Range(MinPositive, 1f),
+            Slimy = UnityEngine.Random.Range(MinPositive, 1f),
+            Rough = UnityEngine.Random.Range(MinPositive, 1f),
+            Soft = UnityEngine.Random.Range(MinPositive, 1f),
+            Spiky = UnityEngine.Random.Range(MinPositive, 1f),
+            Reflection = UnityEngine.Random.value,
+            Tint = UnityEngine.Random.value,
+        };
     }
 
     private static PimentColor RandomColor()

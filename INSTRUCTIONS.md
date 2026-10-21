@@ -26,7 +26,7 @@ Commencez avec un niveau d'épice de **0**.
 - Sinon, si le pays est la **Chine**, diminuez le niveau d'épice de **2**, puis allez à l'[étape 4](#étape-4).
 - Sinon, si le pays est l'**Indonésie** et que votre niveau d'épice est au-dessus de **9**, votre niveau d'épice final est finalement de **2**.
 - Sinon, si le pays est le **Brésil**, **multipliez** le niveau d'épice **par 2**, puis allez à l'[étape 5](#étape-5).
-- Sinon, pleurez. *(Ces piments n'existent pas dans le jeu.)*
+- Sinon, **multipliez** le niveau d'épice **par 3**, puis allez à l'[étape 4](#étape-4).
 
 ## Étape 4
 
