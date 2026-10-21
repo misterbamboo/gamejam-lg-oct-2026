@@ -33,8 +33,8 @@ def step3(shu, color, pays):
         shu *= 2
         return step5(shu, color, pays)
     else:
-        print("HUH")
-        return None
+        shu *= 3
+        return step4(shu, color, pays)
 
 
 def step4(shu, color, pays):
