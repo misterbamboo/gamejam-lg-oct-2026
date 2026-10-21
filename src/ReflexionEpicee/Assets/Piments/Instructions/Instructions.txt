@@ -1,0 +1,47 @@
+À la fin, si votre niveau d’épice n’est pas entre 0 et 10, enlevez ou ajoutez 10 jusqu’à ce qu’il l’est.
+
+-	Étape 1 : Commencez avec un niveau d’épice de 0. Si le piment est rouge, augmentez le niveau d’épice de 3, puis allez à l’étape 2.
+Sinon, si le piment est vert, diminuez le niveau d’épice de 5.5, puis allez à l’étape 3.
+Sinon, augmentez le niveau d’épicede 6.1, puis allez à l’étape 4.
+
+-	Étape 2 : Si le nom du pays d’origine du piment commence avec un « I », augmentez le niveau d’épice de 7.6, puis allez à l’étape 5.
+Sinon, diminuez le niveau d’épice de 9.9, puis allez à l’étape 8.
+
+-	Étape 3 : Si au moins 10% de la population du pays parle l’anglais, augmentez le niveau d’épice de 0.1, puis allez à l’étape 6.
+Sinon, si le pays est la Chine, diminuez le niveau d’épice de 2 + le niveau de sécheresse du piment, puis allez à l’étape 4.
+Sinon, si le pays est l’Indonésie et que votre niveau d’épice est au dessus de 9, votre niveau d’épice final est finalement de 2.
+Sinon, pleurez.
+
+-	Étape 4 : Si vous vous demandez pourquoi il y a autant d’étapes, allez à l’étape 16.
+Sinon, si votre niveau d’épice est au dessus de 5, allez à l’étape 9.
+Sinon, si le piment a l’air joli, augmentez le niveau d’épice de 9 puis allez à l’étape 10.
+Sinon, allez à l’étape 6.
+
+-	Étape 5 : Si le nom du pays est l’Indonésie, votre niveau d’épice final est soit le niveau d’épice actuel plus 5 ou moins 3.
+Sinon, Si le piment n’est pas pas pas pas pas pas pas pas pas pas rouge augmentez le niveau d’épice de 15, cela est votre niveau d’épice final.
+Sinon, augmentez le niveau d’épice de 351, cela est votre niveau d’épice final.
+
+-	Étape 6 : Si votre piment à un niveau d’épice entre 5 et 6, retournez à l’étape 1 avec votre niveau d’épice actuel,
+Sinon, si le pays d’origine est le Canada, complimentez le piment puis divisez le niveau d’épice par 2, cela est votre niveau d’épice final.
+Sinon, allez à l’étape 9.
+
+-	Étape 7 : Répétez votre étape précédente.
+
+-	Étape 8 : Divisez votre niveau d’épice, s’il est en dessous de 5, allez à l’étape 9.
+Sinon, allez à l’étape 7.
+
+-	Étape 9 : Si le pays d’origine est en Amérique du Nord, augmentez le niveau d’épice de 4.4, cela est votre niveau d’épice final.
+Sinon, diminuez le niveau d’étape de 4.4, cela est votre niveau d’épice final.
+
+-	Étape 10 : Diminuez le niveau d’épice de 9 puis répétez votre étape précédente.
+
+
+
+
+
+
+
+-	Étape 16 : Concentrez vous et répétez votre étape précédente.
+
+
+
