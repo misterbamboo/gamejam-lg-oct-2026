@@ -45,4 +45,9 @@ public class PimentsManager : MonoBehaviour
     {
         EventBus.Subscribe<PimentRequested>(GameEvents.PimentRequested, CreatePiment);
     }
+
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<PimentRequested>(GameEvents.PimentRequested, CreatePiment);
+    }
 }
